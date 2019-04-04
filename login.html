@@ -1,0 +1,42 @@
+<HTML>
+<HEAD><TITLE> Login Here </TITLE>
+<STYLE>
+
+body {background-color: green;}
+.button {background-color: gold; 
+                 border: none;
+  		 color: black;
+ 		 padding: 15px 32px;
+ 		 text-align: center;
+ 		 text-decoration: none;
+  		 display: inline-block;
+  		 font-size: 16px;
+  		 margin: 4px 2px;
+  		 cursor: pointer;
+                 border-radius: 12px;}
+.text{background-color:white;
+	   text-align: center;
+ 	   text-decoration: none;
+           display: inline-block;
+  	   font-size: 16px;
+    	   margin: 4px 2px;}
+
+</Style>
+</HEAD>
+
+<BODY>
+<H2 style="color: gold;">Welcome to Golf Analysis!</H2>
+<FORM name='fmLogin' action='login_f.php' method='POST'>
+    <h3 style="color: gold;"> Please enter your credentials:</h3>
+    <INPUT  type='text' class="text" name='tflogin' size='30' placeholder='Enter your username' /> <BR /><BR />
+    <INPUT  type='password' class="text" name='tfPass' size='30' placeholder='Enter your password' /> <BR /><BR />
+    <BR />
+    <INPUT type='submit' class="button"  onclick="location.href='landingPage.html'" value='Login'>
+    <INPUT type='reset' class="button" value='Clear'>
+
+    <h3 style="color: gold;">If you are a new user, click here!</h3>
+    <INPUT type='button' class="button"  name ='register' onclick="location.href='signup.html'" value='Register'>
+</FORM>
+
+</BODY>
+</HTML>
