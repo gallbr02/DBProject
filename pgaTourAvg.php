@@ -4,34 +4,17 @@ session_start();
 include_once('db_connect.php');
 include_once('functionalities.php');
 
-echo "hello";
-$s1 = $_POST['s1'];
-$d1 = $_POST['d1'];
-$s2 = $_POST['s2'];
-$d2 = $_POST['d2'];
-$s3 = $_POST['s3'];
-$d3 = $_POST['d3'];
-$s4 = $_POST['s4'];
-$d4 = $_POST['d4'];
-$s5 = $_POST['s5'];
-$d5 = $_POST['d5'];
-$s6 = $_POST['s6'];
-$d6 = $_POST['d6'];
-$s7 = $_POST['s7'];
-$d7 = $_POST['d7'];
-$s8 = $_POST['s8'];
-$d8 = $_POST['d8'];
-$s9 = $_POST['s9'];
-$d9 = $_POST['d9'];
-$s10 = $_POST['s10'];
-$d10 = $_POST['d10'];
+$pgaSurf = $_POST['pgaSurface'];
+$pgaDist = $_POST['avgPGADist'];
 
-$numShots = $_POST['shots'];
+var_dump ($pgaSurf);
 
-$totalSG = calcSGHole($db, $numShots, $s1, $d1, $s2, $d2, $s3, $d3, $s4, $d4, $s5, $d5, $s6, $d6, $s7, $d7, $s8, $d8, $s9, $d9, $s10, $d10)
+$eValue1 = $db->query("SELECT eValue FROM sgValues WHERE surface = $pgaSurf AND distance = $pgaDist);");
+echo ($eValue1);
 
-echo "hello";
-echo $totalSG;
+
+$selected_val = $_POST['pgaSurface'];
+echo "hope this works " .$selected_val);
 ?>
 
 <HTML>
@@ -66,17 +49,7 @@ body {background-color: green;}
 </HEAD>
 <BODY background="Golfball.png">
 
-<P class="para"> Driving </P> 
-
-<P class="para"> Approach </P> 
-
-<P class="para"> Short Game </P>
-
-<P class="para"> Putting </P>
-
-<P class="para"> Recovery </P>
-
-
+<P class="para"> PGA Average <?php   print($eValue1)  ?> </P> 
 
 </BODY>
 </HTML>

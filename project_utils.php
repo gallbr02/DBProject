@@ -33,4 +33,10 @@ function addUser($db, $email, $name, $handicap, $uname, $password){
 		echo "<P>Successfully inserted $uname into golfer</P>\n";
 	}
 }
+
+function addCourse($db, $par, $location, $cname){
+	$str1 = "INSERT INTO course (par, location, cname) VALUE('$par', '$location', '$cname');";
+
+	$result1 = $db->query($str1);
+}
 ?>

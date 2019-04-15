@@ -1,4 +1,7 @@
 <?php
+session_start();
+
+include_once('db_connect.php');
 function calcSG($db, $surface1, $distance1, $surface2, $distance2)
   {
     if($distance2 == 0)

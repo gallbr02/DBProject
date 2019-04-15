@@ -28,7 +28,7 @@ body {background-color: green;}
 <BODY background="Golfball.png">
 <H2 style="color:gold">Strokes Gained Analysis</H2>
 
- <form action="/action_page.php">
+ <form name='fmStrokesGained' action='strokesGained.php' method='POST'>
   <select name="s1">
 <option value="Select">Select</option>
     <option value="Tee">Tee</option>
@@ -39,7 +39,7 @@ body {background-color: green;}
 <option value="Other">Other</option>
   </select>
 
- <INPUT  type='text' class="text" name='tflogin' size='30' placeholder='Enter your distance' /> <BR /><BR />
+ <INPUT  type='text' class="text" name='d1' size='30' placeholder='Enter your distance' /> <BR /><BR />
 
  <select name="s2">
 <option value="Select">Select</option>
@@ -50,7 +50,7 @@ body {background-color: green;}
 <option value="Sand">Sand</option>
 <option value="Other">Other</option>
   </select>
-<INPUT  type='text' class="text" name='tflogin' size='30' placeholder='Enter your distance' /> <BR /><BR />
+<INPUT  type='text' class="text" name='d2' size='30' placeholder='Enter your distance' /> <BR /><BR />
 
  <select name="s3">
 <option value="Select">Select</option>
@@ -61,7 +61,7 @@ body {background-color: green;}
 <option value="Sand">Sand</option>
 <option value="Other">Other</option>
   </select>
- <INPUT  type='text' class="text" name='tflogin' size='30' placeholder='Enter your distance' /> <BR /><BR />
+ <INPUT  type='text' class="text" name='d3' size='30' placeholder='Enter your distance' /> <BR /><BR />
 
  <select name="s4">
 <option value="Select">Select</option>
@@ -72,7 +72,7 @@ body {background-color: green;}
 <option value="Sand">Sand</option>
 <option value="Other">Other</option>
   </select>
- <INPUT  type='text' class="text" name='tflogin' size='30' placeholder='Enter your distance' /> <BR /><BR />
+ <INPUT  type='text' class="text" name='d4' size='30' placeholder='Enter your distance' /> <BR /><BR />
 
  <select name="s5">
 <option value="Select">Select</option>
@@ -83,7 +83,7 @@ body {background-color: green;}
 <option value="Sand">Sand</option>
 <option value="Other">Other</option>
   </select>
- <INPUT  type='text' class="text" name='tflogin' size='30' placeholder='Enter your distance' /> <BR /><BR />
+ <INPUT  type='text' class="text" name='d5' size='30' placeholder='Enter your distance' /> <BR /><BR />
 
   <select name="s6">
 <option value="Select">Select</option>
@@ -95,7 +95,7 @@ body {background-color: green;}
 <option value="Other">Other</option>
   </select>
 
- <INPUT  type='text' class="text" name='tflogin' size='30' placeholder='Enter your distance' /> <BR /><BR />
+ <INPUT  type='text' class="text" name='d6' size='30' placeholder='Enter your distance' /> <BR /><BR />
 
  <select name="s7">
 <option value="Select">Select</option>
@@ -106,7 +106,7 @@ body {background-color: green;}
 <option value="Sand">Sand</option>
 <option value="Other">Other</option>
   </select>
-<INPUT  type='text' class="text" name='tflogin' size='30' placeholder='Enter your distance' /> <BR /><BR />
+<INPUT  type='text' class="text" name='d7' size='30' placeholder='Enter your distance' /> <BR /><BR />
 
  <select name="s8">
 <option value="Select">Select</option>
@@ -117,7 +117,7 @@ body {background-color: green;}
 <option value="Sand">Sand</option>
 <option value="Other">Other</option>
   </select>
- <INPUT  type='text' class="text" name='tflogin' size='30' placeholder='Enter your distance' /> <BR /><BR />
+ <INPUT  type='text' class="text" name='d8' size='30' placeholder='Enter your distance' /> <BR /><BR />
 
  <select name="s9">
 <option value="Select">Select</option>
@@ -128,7 +128,7 @@ body {background-color: green;}
 <option value="Sand">Sand</option>
 <option value="Other">Other</option>
   </select>
- <INPUT  type='text' class="text" name='tflogin' size='30' placeholder='Enter your distance' /> <BR /><BR />
+ <INPUT  type='text' class="text" name='d9' size='30' placeholder='Enter your distance' /> <BR /><BR />
 
  <select name="s10">
 <option value="Select">Select</option>
@@ -139,15 +139,65 @@ body {background-color: green;}
 <option value="Sand">Sand</option>
 <option value="Other">Other</option>
   </select>
- <INPUT  type='text' class="text" name='tflogin' size='30' placeholder='Enter your distance' /> <BR /><BR />
+ <INPUT  type='text' class="text" name='d10' size='30' placeholder='Enter your distance' /> <BR /><BR />
+ <INPUT  type='text' class="text" name='shots' size='30' placeholder='What score did you make on the hole?' /> <BR /><BR />
+ <select name="avgSurface">
+<option value="Select">Select</option>
+    <option value="Tee">Tee</option>
+    <option value="Fairway">Fairway</option>
+    <option value="Rough">Rough</option>
+    <option value="Green">Green</option>
+<option value="Sand">Sand</option>
+<option value="Other">Other</option>
+  </select>
+ <INPUT  type='text' class="text" name='avgDist' size='30' placeholder='Enter a yardage that you would like your average Strokes Gained Statistics from' /> <BR /><BR />
+
+ <select name="pgaSurface">
+<option value="Select">Select</option>
+    <option value="Tee">Tee</option>
+    <option value="Fairway">Fairway</option>
+    <option value="Rough">Rough</option>
+    <option value="Green">Green</option>
+<option value="Sand">Sand</option>
+<option value="Other">Other</option>
+  </select>
+ <INPUT  type='text' class="text" name='avgDist' size='30' placeholder='Enter a yardage that you would like your average Strokes Gained Statistics from' /> <BR /><BR />
 
  <INPUT type='reset' class="button" value='Clear'>
  <INPUT type='button' class="button"  name ='register' onclick="MAKE A PHP FILE" value='Next Hole'>
  <INPUT type='button' class="button"  name ='save' onclick="MAKE A PHP FILE" value='Save Shots'> </BR></BR>
+<INPUT type='button' class="button"  name ='showAVG' onclick="location.href='averages.php'" value = 'Calculate Distance Average'>
  <INPUT type='button' class="button"  name ='showResults' onclick="location.href='strokesGained.php'" value='Calculate Strokes Gained'>
 
 </form>
+
+<form name='fmPGAAvg' action='pgaTourAvg.php' method='POST'>
  
+<select name="pgaSurface">
+<option value="Select">Select</option>
+    <option value="Tee">Tee</option>
+    <option value="Fairway">Fairway</option>
+    <option value="Rough">Rough</option>
+    <option value="Green">Green</option>
+<option value="Sand">Sand</option>
+<option value="Other">Other</option>
+  </select>
+ <INPUT  type='text' class="text" name='avgPGADist' size='30' placeholder='Enter a yardage that you would like your average Strokes Gained Statistics from' /> <BR /><BR />
+
+<INPUT type='button' class="button"  name ='showPGAavg' onclick="location.href='pgaTourAvg.php'" value = 'Calculate PGA Tour Average'>
+
+</form>
+
+<form  name='fmEmailScores' action='emailScores.php' method='POST'>
+
+<INPUT  type='text' class="text" name='name' size='30' placeholder='Enter your name' /> <BR /><BR />
+<INPUT  type='text' class="text" name='email' size='30' placeholder='Enter your email' /> <BR /><BR />
+<INPUT type='submit' class="button"value = 'Email your scores'>
+</form>
+
+<FORM name='fmAddCourse' method='POST'>
+	<INPUT type='button' class="button" onclick="location.href='addCourse.html'" value = 'Click to add a new course'>
+</FORM>
 
 </BODY>
 </HTML>

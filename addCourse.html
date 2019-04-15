@@ -1,0 +1,42 @@
+<HTML>
+<HEAD><TITLE>Golf Analysis</TITLE>
+<STYLE>
+
+body {background-color: green;}
+.button {background-color: gold; 
+                 border: none;
+  		 color: black;
+ 		 padding: 15px 32px;
+ 		 text-align: center;
+ 		 text-decoration: none;
+  		 display: inline-block;
+  		 font-size: 16px;
+  		 margin: 4px 2px;
+  		 cursor: pointer;
+                 border-radius: 12px;}
+.text{background-color:white;
+          color:black;
+	   text-align: center;
+ 	   text-decoration: none;
+           display: inline-block;
+  	   font-size: 16px;
+    	   margin: 4px 2px;
+	   margin-left: 40px; }
+
+.para{color:gold;
+    font-size:32px;}
+
+</Style>
+</HEAD>
+<BODY background="Golfball.png">
+
+<FORM name='fmAddCourse' action='addCourse.php' method='POST'>
+ <INPUT  type='text' class="text" name='course' size='30' placeholder='Enter a course you would like to add' /> <BR /><BR />
+<INPUT  type='text' class="text" name='par' size='30' placeholder='Enter par for that course' /> <BR /><BR />
+<INPUT  type='text' class="text" name='location' size='30' placeholder='Enter location' /> <BR /><BR />
+
+<INPUT type='submit' class="button" value = 'Add Course'>
+</FORM>
+
+</BODY>
+</HTML>
