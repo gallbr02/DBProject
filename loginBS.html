@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Golf Stroke Analysis</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+    <STYLE>
+
+        body {
+            background: url('https://www.poipubaygolf.com/wp-content/uploads/2017/02/Kauai-Oceanfront-Golf-Course.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .text {
+            color: black;
+            background-color: palegoldenrod;
+            text-decoration: none;
+            display: inline-block;
+            margin: 4px 2px;
+            margin-left: 40px;
+            outline: 5px solid black;
+        }
+
+        heading {
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .Mybtn {
+            background-color: palegoldenrod;
+            color: black;
+            padding: 12px;
+            font-size: 12px;
+            border: none;
+            outline: 5px solid black;
+        }
+    </STYLE>
+</head>
+<body>
+    <div class="text-center">
+        <h1 class="heading"> Login Here! </h1>
+        <FORM name='fmLogin' action='login_f.php' method='POST'>
+            <h3> Please enter your credentials:</h3>
+            <INPUT type='text' class="text" name='tflogin' size='30' placeholder='Enter your username' /> <BR /><BR />
+            <INPUT type='password' class="text" name='tfPass' size='30' placeholder='Enter your password' /> <BR /><BR />
+            <BR />
+            <INPUT type='submit' class="Mybtn" value='Login'>
+            <INPUT type='reset' class="Mybtn" value='Clear'>
+
+            <h3 style="color: white;">If you are a new user, click here!</h3>
+            <INPUT type='button' class="Mybtn" name='register' onclick="location.href='signup.html'" value='Register'>
+        </FORM>
+    </div>
+</body>
+</html>
