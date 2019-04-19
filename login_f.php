@@ -9,7 +9,7 @@ $resultStr = "";
 $result = checkUser($db, $_POST['tflogin'], $_POST['tfPass']);
 
 if($result == 1){
-	header('Location: landingPage.html');
+	header('Location: LandingPageBS.html');
 	exit;
 }
 else{

@@ -30,7 +30,6 @@ body {background-color: green;}
 
  <form name='fmStrokesGained' action='strokesGained.php' method='POST'>
   <select name="s1">
-<option value="Select">Select</option>
     <option value="Tee">Tee</option>
     <option value="Fairway">Fairway</option>
     <option value="Rough">Rough</option>
@@ -53,7 +52,6 @@ body {background-color: green;}
 <INPUT  type='text' class="text" name='d2' size='30' placeholder='Enter your distance' /> <BR /><BR />
 
  <select name="s3">
-<option value="Select">Select</option>
     <option value="Tee">Tee</option>
     <option value="Fairway">Fairway</option>
     <option value="Rough">Rough</option>
@@ -168,8 +166,8 @@ body {background-color: green;}
  <INPUT type='button' class="button"  name ='register' onclick="MAKE A PHP FILE" value='Next Hole'>
  <INPUT type='button' class="button"  name ='save' onclick="MAKE A PHP FILE" value='Save Shots'> </BR></BR>
 <INPUT type='button' class="button"  name ='showAVG' onclick="location.href='averages.php'" value = 'Calculate Distance Average'>
- <INPUT type='button' class="button"  name ='showResults' onclick="location.href='strokesGained.php'" value='Calculate Strokes Gained'>
-
+ <!--INPUT type='submit' class="button"  name ='showResults' onclick="location.href='strokesGained.php'" value='Calculate Strokes Gained'-->
+<INPUT type='submit' class="button"  name ='showResults' value='Calculate Strokes Gained'>
 </form>
 
 <form name='fmPGAAvg' action='pgaTourAvg.php' method='POST'>

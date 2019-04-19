@@ -12,7 +12,8 @@ if ($result2 == TRUE){
 	$result2Str = "Check email for verification";
 }
 else{
-	$result2Str = "Failed to register";
+	header('Location: loginBS.html');
+	exit;
 }
 
 ?>
