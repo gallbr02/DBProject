@@ -6,24 +6,35 @@ function calcSG($db, $surface1, $distance1, $surface2, $distance2)
   {
     if($distance2 == 0)
     {
-      $eValue1 = $db->query("SELECT eValue FROM sgValues WHERE surface = $surface1 AND distance = $distance1);");
+      $eValue1 = $db->query("SELECT eValue FROM sgValues WHERE surface = '$surface1' AND distance = $distance1;");
       $strokesGained = $eValue1 - 1;
     }
     else
     {
-      $eValue1 = $db->query("SELECT eValue FROM sgValues WHERE surface = $surface1 AND distance = $distance1);");
-      $eValue2 = $db->query("SELECT eValue FROM sgValues WHERE surface = $surface2 AND distance = $distance2);");
+      $eValue1 = $db->query("SELECT eValue FROM sgValues WHERE surface = '$surface1' AND distance = $distance1;");
+      $eValue2 = $db->query("SELECT eValue FROM sgValues WHERE surface = '$surface2' AND distance = $distance2;");
       $strokesGained = $eValue1 - $eValue2 - 1.0;
     }
     return $strokesGained;
   }
 
+function calcSGHole($db, $numShots, $surfaces, $distances) {
+
+	$sg = 0;
+	for ($i = 0; $i < $numShots-1; ++$i) {
+		 $sg = calcSG($db, $surfaces[$i], $distances[$i], $surfaces[$i+1], $distances[$i+1]);
+	}
+
+        return $sg + calcSG($db, $surfaces[$numShots-1], $distances[$numShots-1], "", 0);
+}
+
+/*
 function calcSGHole($db, $numShots, $surface1, $distance1, $surface2, $distance2, $surface3, $distance3, $surface4, $distance4, $surface5, $distance5, 
 $surface6, $distance6, $surface7, $distance7, $surface8, $distance8, $surface9, $distance9, $surface10, $distance10)
   {
     if($numShots == 1)
     {
-      $v1 = $db->query("SELECT eValue FROM sgValues WHERE surface = $surface1 AND distance = $distance1);");
+      $v1 = $db->query("SELECT eValue FROM sgValues WHERE surface = '$surface1' AND distance = $distance1);");
       return $v1 - 1;
     }
     else if($numShots == 2)
@@ -117,4 +128,5 @@ $surface6, $distance6, $surface7, $distance7, $surface8, $distance8, $surface9, 
       return $sg;
     }
   }
+*/
 ?>
