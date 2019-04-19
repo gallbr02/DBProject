@@ -19,13 +19,55 @@ function calcSG($db, $surface1, $distance1, $surface2, $distance2)
   }
 
 function calcSGHole($db, $numShots, $surfaces, $distances) {
-
-	$sg = 0;
-	for ($i = 0; $i < $numShots-1; ++$i) {
+        $sgDrive = 0.0;
+	$sgApp = 0.0;
+	$sgShort = 0.0;
+	$sgPutt = 0.0;
+	$sgRecovery = 0.0;
+	$sg = 0.0;
+	$sgTotal = 0.0;
+	for ($i = 0; $i < sizeOf($surfaces)-1; ++$i) {
 		 $sg = calcSG($db, $surfaces[$i], $distances[$i], $surfaces[$i+1], $distances[$i+1]);
+		 if($surfaces[$i] == "Tee" && $distances[$i] > 240)
+		 {
+			 $sgDrive += $sg;
+			 $sgTotal += $sg;
+		 }
+		 else if($surfaces[$i] == "Tee" && $distances[$i] <= 240)
+		 {
+			 $sgApp += $sg;
+			 $sgTotal += $sg;
+		 }
+		 else if(($surfaces[$i] == "Fairway" || $surfaces[$i] == "Rough" || $surfaces[$i] == "Sand") && $distances[$i] >= 100)
+		 {
+			 $sgApp += $sg;
+			 $sgTotal += $sg;
+		 }
+		 else if(($surfaces[$i] == "Fairway" || $surfaces[$i] == "Rough" || $surfaces[$i] == "Sand") && $distances[$i] < 100)
+		 {
+			 $sgShort += $sg;
+			 $sgTotal += $sg;
+		 }
+		 else if($surfaces[$i] == "Green")
+		 {
+			 $sgPutt += $sg;
+			 $sgTotal += $sg;
+		 }
+		 else if($surfaces[$i] == "Other")
+		 {
+			 $sgRecovery += $sg;
+			 $sgTotal += $sg;
+		 }	 
 	}
-
-        return $sg + calcSG($db, $surfaces[$numShots-1], $distances[$numShots-1], "", 0);
+	$sgTotals = array();
+	$sgTotals[0] = $sgDrive;
+	$sgTotals[1] = $sgApp;
+	$sgTotals[2] = $sgShort;
+	$sgTotals[3] = $sgPutt;
+	$sgTotals[4] = $sgOther;
+	$sgTotals[5] = $sgTotal;
+	return $sgTotals;
+        //return $sg + calcSG($db, $surfaces[$numShots-1], $distances[$numShots-1], "", 0);
 }
 
 /*
