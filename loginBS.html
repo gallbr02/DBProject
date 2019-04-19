@@ -43,9 +43,14 @@
 </head>
 <body>
     <div class="text-center">
+
+        <div class="jumbotron text-center .text-primary ">
+            <h1>Welcome To Golf Stroke Analysis</h1>
+            <p>Please enter your login or click to register if you are a new user!</p>
+        </div>
         <h1 class="heading"> Login Here! </h1>
         <FORM name='fmLogin' action='login_f.php' method='POST'>
-            <h3> Please enter your credentials:</h3>
+            <h3 style="color:white"> Please enter your credentials:</h3>
             <INPUT type='text' class="text" name='tflogin' size='30' placeholder='Enter your username' /> <BR /><BR />
             <INPUT type='password' class="text" name='tfPass' size='30' placeholder='Enter your password' /> <BR /><BR />
             <BR />
@@ -53,7 +58,7 @@
             <INPUT type='reset' class="Mybtn" value='Clear'>
 
             <h3 style="color: white;">If you are a new user, click here!</h3>
-            <INPUT type='button' class="Mybtn" name='register' onclick="location.href='signup.html'" value='Register'>
+            <INPUT type='button' class="Mybtn" name='register' onclick="location.href='signupBS.html'" value='Register'>
         </FORM>
     </div>
 </body>

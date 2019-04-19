@@ -55,13 +55,14 @@
     <div class="text-left">
         <form name="fmBtns">
             <span style="display:inline-block; width:6px"></span>
-            <input type="button" class="btn btn-warning w-100 text-left" name='showResults' onclick="location.href='LandingPage.html'" value='Home'>
+            <input type="button" class="btn btn-warning w-100 text-left" name='showResults' onclick="location.href='LandingPageBS.html'" value='Home'>
             <div style="float: right">
-                <INPUT type='button' class="btn btn-warning w-100 text-right" name='bnStrokesGained' onclick="location.href='StrokesGained.html'" value='Calculate Strokes Gained'>
-                <INPUT type='button' class="btn btn-warning w-100 text-right" name='bnDistAvg' onclick="location.href='distAvg.html'" value='Calculate Distance Average'>
-                <INPUT type='button' class="btn btn-warning w-100 text-right" name='bnPGA' onclick="location.href='pgaAvg.html'" value='Calculate PGA Tour Average'>
-                <INPUT type='button' class="btn btn-warning w-100 text-right" name='bnEmail' onclick="location.href='email.html'" value='Email Your Scores'>
-                <INPUT type='button' class="btn btn-warning w-100 text-right" name='bnAddCourse' onclick="location.href='addCourse.html'" value='Add A New Course'>
+                <INPUT type='button' class="btn btn-warning w-100 text-right" name='bnStrokesGained' onclick="location.href='StrokesGainedBS.html'" value='Calculate Strokes Gained'>
+                <INPUT type='button' class="btn btn-warning w-100 text-right" name='bnDistAvg' onclick="location.href='distAvgBS.html'" value='Calculate Distance Average'>
+                <INPUT type='button' class="btn btn-warning w-100 text-right" name='bnPGA' onclick="location.href='pgaAvgBS.html'" value='Calculate PGA Tour Average'>
+                <INPUT type='button' class="btn btn-warning w-100 text-right" name='bnEmail' onclick="location.href='emailBS.html'" value='Email Your Scores'>
+                <INPUT type='button' class="btn btn-warning w-100 text-right" name='bnAddCourse' onclick="location.href='addCourseBS.html'" value='Add A New Course'>
+                <INPUT type='button' class="btn btn-warning w-100 text-right" name='bnAddCourse' onclick="location.href='aboutBS.html'" value='About Us'>
                 <span style="display:inline-block; width:-10px"></span>
             </div>
 
@@ -69,6 +70,7 @@
     </div>
     <form name='fmStrokesGained' action='pgaAvg_f.php' method='POST'>
         <div class="text-center">
+            <br />
             <br />
             <select class="dropbtn" name="PGASurface">
                 <option value="Tee">Tee</option>
@@ -81,7 +83,7 @@
 
             <span style="display:inline-block; width:6px"></span>
 
-            <INPUT type='text' class="text" name='d10' size='30' placeholder='Enter a yardage that you would like to know the PGA average for' /> <BR /><BR />
+            <INPUT type='text' class="text" name='avgPGADist' size='30' placeholder='Enter a yardage that you would like to know the PGA average for' /> <BR /><BR />
 
             <INPUT type='reset' class="btn btn-warning btn-lg" value='Clear'>
             <span style="display:inline-block; width:70px"></span>
