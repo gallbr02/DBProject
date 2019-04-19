@@ -8,7 +8,7 @@ function calcSG($db, $surface1, $distance1, $surface2, $distance2)
     {
        echo $distance1, $distance2, $surface1, $surface2;
       $eValue1 = $db->query("SELECT eValue FROM sgValues WHERE surface = '$surface1' AND distance = $distance1;");
-      $strokesGained = $eValue1 - 1.0;
+      $strokesGained = $eValue1->fetch_object()->eValue - 1.0;
     }
     else
     {
