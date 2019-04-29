@@ -12,7 +12,7 @@ if ($result2 == TRUE){
 	$result2Str = "Check email for verification";
 }
 else{
-	header('Location: loginBS.html');
+	header('Location: loginAfterSignupBS.html');
 	exit;
 }
 
